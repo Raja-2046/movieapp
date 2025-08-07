@@ -1,0 +1,19 @@
+{
+  "name": "react_part",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raja-2046/movieapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raja-2046/movieapp/issues"
+  },
+  "homepage": "https://github.com/Raja-2046/movieapp#readme",
+  "description": ""
+}

@@ -7,46 +7,59 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import moviesList from '../data';
 import MovieCard from './MovieCard';
-function MovieList () {
-    const [movies, setMovies] = useState(moviesList);
-    const [show, setShow] = useState(false);
-    const [filteredRating, setFilteredRating] = useState(0)
-    const [addedMovie, setAddedMovie] = useState({
-        title: '',
-        description: '',
-        rating: 0,
-        posterURL: '',
-    })
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-    const handleFilterByName = (event) => {
-        const value = event.target.value;
-        const nMovies = moviesList.filter((m) => m.title.includes(value));
-        setMovies(nMovies);
-        if (!event.target.value) {
-            setMovies(moviesList);
-        }
-    }
-    const ratingChanged = (newRating) => {
-        console.log('ttettette', newRating);
-        setFilteredRating(newRating);
-        const nMovies = moviesList.filter((m) => m.rating === newRating);
-        setMovies(nMovies);
-    }
+function MovieList (props) {
+    // const [movies, setMovies] = useState(moviesList);
+    // const [show, setShow] = useState(false);
+    // const [filteredRating, setFilteredRating] = useState(0)
+    // const [addedMovie, setAddedMovie] = useState({
+    //     title: '',
+    //     description: '',
+    //     rating: 0,
+    //     posterURL: '',
+    // })
+    // const handleClose = () => setShow(false);
+    // const handleShow = () => setShow(true);
+    // const handleFilterByName = (event) => {
+    //     const value = event.target.value;
+    //     const nMovies = moviesList.filter((m) => m.title.includes(value));
+    //     setMovies(nMovies);
+    //     if (!event.target.value) {
+    //         setMovies(moviesList);
+    //     }
+    // }
+    // const ratingChanged = (newRating) => {
+    //     console.log('ttettette', newRating);
+    //     setFilteredRating(newRating);
+    //     const nMovies = moviesList.filter((m) => m.rating === newRating);
+    //     setMovies(nMovies);
+    // }
 
-    const handleChnage = (event) => {
-        const name = event.target.name;
-        console.log(event.target.name, event.target.value);
-        setAddedMovie({ ...addedMovie, [name]: event.target.value})
-    }
-    const addedRatingChanged = (newRating) => {
-        setAddedMovie({ ...addedMovie, rating: newRating})
-    }
-    const handleAddMovie = () => {
-        console.log('helooo');
-        console.log('adeddddd new', addedMovie);
-        setMovies([...moviesList, addedMovie]);
-    }
+    // const handleChnage = (event) => {
+    //     const name = event.target.name;
+    //     console.log(event.target.name, event.target.value);
+    //     setAddedMovie({ ...addedMovie, [name]: event.target.value})
+    // }
+    // const addedRatingChanged = (newRating) => {
+    //     setAddedMovie({ ...addedMovie, rating: newRating})
+    // }
+    // const handleAddMovie = () => {
+    //     console.log('helooo');
+    //     console.log('adeddddd new', addedMovie);
+    //     setMovies([...moviesList, addedMovie]);
+    // }
+    const {
+         movies,
+          show,
+          handleClose,
+          handleShow,
+          handleFilterByName,
+          ratingChanged,
+          handleChnage,
+          addedRatingChanged,
+          handleAddMovie,
+          filteredRating,
+          addedMovie,
+    } = props;
     return (
       <div className="row m-auto">
         <Row className="m-5">
